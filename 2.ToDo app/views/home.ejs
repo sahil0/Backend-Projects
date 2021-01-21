@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> <%= title %></title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+    crossorigin="anonymous"
+  />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <main>
+      <section class="glass">
+        <div class="child1">
+          <h1>
+            My Todo <i class="fas fa-paperclip"></i>
+
+          </h1>
+          <!-- <div class="dashboard">
+              <form id="task-input" action="/create-task" method="POST" >
+                <div class="status">
+                 <input type="text" class="todo-input" name="description" placeholder="What do you need to do?" />
+                </div>
+                <div class="section2">
+                  <select name="category" class="category" id="category">
+                    <option value="" selected>Choose a category</option>
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <input type="date" class="todo-date" name="date" id="date" required /><br />
+                  <button class="todo-button" type="submit">
+                    <i class="fas fa-plus-square"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="taskdashboard">
+              <form action="">
+  
+              </form>
+            </div> -->
+        </div>
+      
+        <div class="child3">
+          <div class="taskdashboard">
+            <div class="backgrounds">
+            <form id="task-input" action="/create-task" method="POST" >
+              <div class="labels">
+                <div class="label-1">Description
+                  <i class="fas fa-file-signature"></i>
+                </div>
+              </div>
+              <div class="status">
+               
+                <input type="text" class="todo-input" id="description" name="description" placeholder="Add Todo Task Here"/>
+              </div>
+              <div class="section2-main">
+                <div class="labels">
+                  <div class="label1">Category</div>
+                  <div class="label2">Date</div>
+                  <div class="label3">Add</div>
+                </div>
+                <div class="section2">
+                  <select name="category" class="category" id="category">
+                    <option value="" selected>Choose a category</option>
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="school">School</option>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="other">Other</option>
+                  </select>
+               
+                  <input type="date" class="todo-date" name="date" id="date" required /><br />
+                  <button class="todo-button" type="submit" onsubmit="return false">
+                    <i class="fas fa-plus-square"></i>
+                  </button>
+                </div>
+             </div>
+            </form>
+          </div>
+          </div>
+          <div class="task-display">
+              <ul class="todo-list">
+                  <% for (let i of todo_list){%>
+                      <li class="todo-item" id="todo-item">
+                        <div class="todo">
+                          <div class="desc">
+                            <!-- <button class="complete-btn" id="complete-btn">
+                              <!-- <a href="/delete-todo/?id=<%= i.__id %>"> -->
+                                <!-- <i class="fas fa-check"></i> -->
+                              <!-- </a> -->
+                            <!-- </button> --> 
+                            <input type="checkbox" id="checkBox" name="checkbox" class="comp-btn">
+                            <label for="cbox2"><%= i.task %></label>
+                          </div>
+                          <div class="cat"><%= i.category %></div>
+                          <div class="delete-button">
+                            <a href="/delete-todo/?id=<%= i._id %>">
+                              <i class="fas fa-trash"></i>
+                            </a>
+                          </div>
+                          <div class="dat"><i class="fas fa-calendar-alt"></i><%= i.date %></div>
+                        </div>
+                        
+                      </li>
+                  <% } %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <script src="/js/script.js"></script>
+  </body>
+  
+
+</html>
