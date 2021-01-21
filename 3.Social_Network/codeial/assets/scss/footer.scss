@@ -1,0 +1,27 @@
+#layout-footer{
+    color: white;
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    background:gray;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    p{
+        flex: 1;
+    }
+    .footer-nav{
+        flex: 0;
+        ul{
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            li{
+                margin: 5px 10px;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

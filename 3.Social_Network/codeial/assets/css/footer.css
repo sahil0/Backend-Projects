@@ -1,0 +1,21 @@
+#layout-footer {
+  color: white;
+  background: gray;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+  #layout-footer a {
+    color: white;
+    text-decoration: none; }
+  #layout-footer p {
+    flex: 1; }
+  #layout-footer .footer-nav {
+    flex: 0; }
+    #layout-footer .footer-nav ul {
+      display: flex;
+      justify-content: space-between;
+      list-style: none; }
+      #layout-footer .footer-nav ul li {
+        margin: 5px 10px;
+        transform: translateX(-50%); }

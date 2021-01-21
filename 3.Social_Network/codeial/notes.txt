@@ -1,0 +1,5 @@
+views--->
+page added in it then
+------>
+        /controller----->
+           add module.exports.pagename
