@@ -10,7 +10,8 @@ router.get('/', homeController.home);
 router.use('/users', require('./users'));
 //accessing post router
 router.use('/posts',require('./posts'));
-
+//accessin comments
+router.use('/comments',require('./comments'));
 // for any further routes, access from here
 // router.use('/routerName', require('./routerfile));
 
