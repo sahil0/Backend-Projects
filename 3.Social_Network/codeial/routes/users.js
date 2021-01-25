@@ -3,10 +3,13 @@ const router = express.Router();
 const passport=require('passport');
 
 const usersController = require('../controllers/users_controller');
-router.get('/profile',passport.checkAuthentication,usersController.profile);
+router.get('/profile/:id',passport.checkAuthentication,usersController.profile);
+//data geting updated
+router.post('/update/:id',passport.checkAuthentication,usersController.update);
+ 
 //here basically we gave address of pages using / and also called as action
 //then we append/connect those action to specific controller modules function which we have return in controllers
-router.get('/profile', usersController.profile);
+// router.get('/profile', usersController.profile);
 
 router.get('/sign-up', usersController.signUp);
 router.get('/sign-in', usersController.signIn);

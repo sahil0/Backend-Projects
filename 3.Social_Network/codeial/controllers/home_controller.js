@@ -1,4 +1,6 @@
 const Post = require('../models/post');
+const User = require('../models/user');
+const Use = require('../models/user');
 
 module.exports.home = function(req, res){
     //populate the user of each post
@@ -11,9 +13,12 @@ module.exports.home = function(req, res){
         }
     })
     .exec(function(err,posts){
-        return res.render('home',{
-            title:'Codeial | home',
-            posts:posts
+        User.find({},function(err,users){
+            return res.render('home',{
+                title:'Codeial | home',
+                posts:posts,
+                all_users:users,
+             });//Now all the users available to us we just need to show them in home
         });
     });
 }
