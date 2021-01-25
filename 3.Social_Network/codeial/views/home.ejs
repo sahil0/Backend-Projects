@@ -1,53 +1,69 @@
-
+<link rel="stylesheet" href="/css/home.css">
 <h1>
-     Codeial / <%= title %>
+   <%= title %>
 </h1>
 <section id="feed-posts">
-    <h4>
+    <!-- <h4>
         Posts
-    </h4>
+    </h4> -->
     <% if(locals.user) { %>
     <form action="/posts/create" id="new-post-form" method="POST">
-        <textarea name="content" cols="30" rows="3"  placeholder="Type Here..." required>
-        </textarea>
+        <div class="two">
+        <label for="content">Posts</label>
+        <textarea name="content" cols="30" rows="3"  placeholder="Type Here..." required></textarea>
         <input type="submit" value="Post">
+       </div>
+       
     </form>
     <% } %>
     <div id="posts-list-container">
-        <ul>
+        <ul class="outer-ul">
             <% for(post of posts){%>
-                <p>
-                <li>
-                    <%= post.content %>
-                </li>
-                <small>
-                    <%= post.user.name %>
-                </small>
-            </p>
-            <div class="post-comments">
-                <%if(locals.user){%>
-                    <form action="/comments/create" method="POST">
-                        <input type="text" name="content" placeholder="Type Here....." required>
-                        <input type="hidden" name="post" value="<%= post._id%>">
-                        <input type="submit" value="Add Comment">
-                    </form>
-                <%}%>
-                <div class="post-comments-list">
-                    <ul id="post-comments-<%= post._id %>">
-                        <% for(comment of post.comments){%>
-                            <p>
-                                <%= comment.content %>
-                                <br>
-                                <small>
-                                    <%= comment.user.name %>
-                                </small>
-                            </p>
-                        <%}%>
-                    </ul>
+                <div class="post-list-inner-container">
+                    <p>
+                        <small class="post-user">
+                            <%= post.user.name %>
+                        </small>
+                        <hr>
+                        <div class="post-details">
+                        <div class="post-content">
+                            <%= post.content %>
+                        </div>
+                    </div>
+                    </p>
+                    <hr>
+                    <div class="post-comments">
+                        <div class="post-comments-list">
+                            <ul id="post-comments-<%= post._id %>">
+                                <% for(comment of post.comments){%>
+                                    <div class="comment-details">  
+                                        <div class="samll">
+                                            <%= comment.user.name %> 💭
+                                        </div>
+                                        <!-- <br> -->
+                                        <!-- <p> -->
+                                        <div class="comment-data">
+                                        <%= comment.content %>
+                                        </div>
+                                        <!-- </p> -->
+                                     
+                                </div>
+                                <%}%>
+                            </ul>
+                        </div>
+                        <hr>
+                        <!-- <div class="post-class"> -->
+                            <%if(locals.user){%>
+                                <form action="/comments/create" class="post-class" method="POST">
+                                    <input class="child1" type="text" name="content" placeholder="Type Here....." required>
+                                    <input class="child2" type="hidden" name="post" value="<%= post._id%>">
+                                    <input class="child3" type="submit" value="Add Comment">
+                                </form>
+                            <%}%>
+                        <!-- </div> -->
+                    </div>
                 </div>
-            </div>
             <%}%>
         </ul>
-
     </div>
 </section>

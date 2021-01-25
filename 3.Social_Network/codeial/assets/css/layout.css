@@ -2,4 +2,6 @@ body {
   margin: 0; }
   body #layout-main {
     height: 100%;
-    display: flex; }
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
