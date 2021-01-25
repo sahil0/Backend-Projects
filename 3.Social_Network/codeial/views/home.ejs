@@ -29,6 +29,11 @@
                         <div class="post-content">
                             <%= post.content %>
                         </div>
+                        <% if(locals.user && locals.user.id==post.user.id) {%>
+                            <small>
+                                <a href="/posts/destroy/<%=post.id%>">X</a>
+                            </small>
+                        <%}%>
                     </div>
                     </p>
                     <hr>
@@ -43,8 +48,10 @@
                                         <!-- <br> -->
                                         <!-- <p> -->
                                         <div class="comment-data">
-                                        <%= comment.content %>
+                                            <%= comment.content %>
+                                            
                                         </div>
+                                        
                                         <!-- </p> -->
                                      
                                 </div>

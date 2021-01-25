@@ -18,7 +18,7 @@ module.exports.destroy=function(req,res){
         //.id means concerting the object id into string
         if(post.user == req.user.id){
             post.remove();
-            Comment.deleteMany({post:req.param.id},function{
+            Comment.deleteMany({post:req.param.id},function(err){
                 return res.redirect('back');
             });
         }else{
@@ -26,12 +26,6 @@ module.exports.destroy=function(req,res){
         }
     });
 }
-
-
-
-
-
-
 
 
 
