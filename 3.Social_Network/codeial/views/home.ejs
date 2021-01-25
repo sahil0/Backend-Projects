@@ -19,62 +19,7 @@
     <div id="posts-list-container">
         <ul class="outer-ul">
             <% for(post of posts){%>
-                <div class="post-list-inner-container">
-                    <p>
-                        <small class="post-user">
-                            <%= post.user.name %>
-                        </small>
-                        <hr>
-                        <div class="post-details">
-                        <div class="post-content">
-                            <%= post.content %>
-                        </div>
-                        <% if(locals.user && locals.user.id==post.user.id) {%>
-                            <small>
-                                <a href="/posts/destroy/<%=post.id%>">X</a>
-                            </small>
-                        <%}%>
-                    </div>
-                    </p>
-                    <hr>
-                    <div class="post-comments">
-                        <div class="post-comments-list">
-                            <ul id="post-comments-<%= post._id %>">
-                                <% for(comment of post.comments){%>
-                                    <div class="comment-details">  
-                                        <div class="samll">
-                                            <%= comment.user.name %> 💭
-                                        </div>
-                                        <!-- <br> -->
-                                        <!-- <p> -->
-                                        <div class="comment-data"> 
-                                            <%= comment.content %>
-                                            
-                                        </div>
-                                        <% if(locals.user && locals.user.id==comment.user.id) {%>
-                                            <small>
-                                                <a href="/comments/destroy/<%=comment.id%>">X</a>
-                                            </small>
-                                        <%}%>
-                                        
-                                        <!-- </p> -->
-                                     
-                                </div>
-                                <%}%>
-                            </ul>
-                        </div>
-                        <hr>
-                        <!-- <div class="post-class"> -->
-                            <%if(locals.user){%>
-                                <form action="/comments/create" class="post-class" method="POST">
-                                    <input class="child1" type="text" name="content" placeholder="Type Here....." required>
-                                    <input class="child2" type="hidden" name="post" value="<%= post._id%>">
-                                    <input class="child3" type="submit" value="Add Comment">
-                                </form>
-                            <%}%>
-                        <!-- </div> -->
-                    </div>
-                </div>
+                <%- include('_post') -%>
             <%}%>
         </ul>
     </div>
