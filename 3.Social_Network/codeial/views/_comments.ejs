@@ -1,0 +1,18 @@
+<div class="comment-details">
+    <div class="samll">
+        <%= comment.user.name %> 💭
+    </div>
+    <!-- <br> -->
+    <!-- <p> -->
+
+    <div class="comment-data"> 
+        <%= comment.content %>
+        
+    </div>
+    <% if(locals.user && locals.user.id==comment.user.id) {%>
+        <small>
+            <a href="/comments/destroy/<%=comment.id%>">X</a>
+        </small>
+    <%}%>
+<!-- </p> -->
+</div>

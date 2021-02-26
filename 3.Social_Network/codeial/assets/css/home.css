@@ -1,0 +1,125 @@
+body {
+  background-color: #e5e2e7; }
+  body #feed-posts {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    background-color: #e5e2e7;
+    border-radius: 10px;
+    color: #121213;
+    width: 50%;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 2% 0;
+    margin-bottom: 1%; }
+    body #feed-posts #new-post-form {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background-color: #FFFFFF;
+      border-radius: 15px;
+      margin: auto;
+      padding: 3px 5px;
+      height: 4.5rem;
+      width: 90%; }
+      body #feed-posts #new-post-form .two {
+        display: inline-flex;
+        width: 100%;
+        height: inherit;
+        border-radius: 20%;
+        margin-top: 15px; }
+        body #feed-posts #new-post-form .two label {
+          color: black;
+          text-align: center;
+          font: 1em sans-serif;
+          padding: 12px; }
+        body #feed-posts #new-post-form .two textarea {
+          flex: 1 55%;
+          background-color: #e5e2e7;
+          height: 60%;
+          padding-top: 10px;
+          padding-left: 5px;
+          font-size: 17px;
+          outline: none;
+          resize: none;
+          margin-right: 10px;
+          border-radius: 20px;
+          border: none; }
+        body #feed-posts #new-post-form .two input[type=submit] {
+          flex: 0 10%;
+          height: 60%;
+          z-index: 1;
+          border-radius: 10px; }
+    body #feed-posts #posts-list-container {
+      display: flex;
+      width: 100%;
+      height: auto; }
+      body #feed-posts #posts-list-container .outer-ul {
+        list-style: none;
+        margin: 0;
+        width: 100%;
+        padding: 0; }
+        body #feed-posts #posts-list-container .outer-ul .post-list-inner-container {
+          background-color: #FFFFFF;
+          border-radius: 10px;
+          margin: 10px;
+          height: auto;
+          padding: 5px 0 12px 0; }
+          body #feed-posts #posts-list-container .outer-ul .post-list-inner-container .post-user {
+            font-size: 20px;
+            margin: auto 10px; }
+          body #feed-posts #posts-list-container .outer-ul .post-list-inner-container .post-details {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: auto;
+            text-align: center; }
+          body #feed-posts #posts-list-container .outer-ul .post-list-inner-container .post-comments {
+            display: flex;
+            flex-direction: column;
+            height: auto; }
+            body #feed-posts #posts-list-container .outer-ul .post-list-inner-container .post-comments .post-comments-list {
+              flex: 1 100%; }
+              body #feed-posts #posts-list-container .outer-ul .post-list-inner-container .post-comments .post-comments-list .comment-details {
+                background-color: #cfc9c9;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                margin: 10px;
+                border-radius: 15px;
+                max-width: 30%;
+                height: auto; }
+                body #feed-posts #posts-list-container .outer-ul .post-list-inner-container .post-comments .post-comments-list .comment-details .small {
+                  flex: 1 100%;
+                  margin-top: 10px 5px 10px 5px;
+                  margin-left: 5px;
+                  font-size: 17px;
+                  font-weight: 700; }
+                body #feed-posts #posts-list-container .outer-ul .post-list-inner-container .post-comments .post-comments-list .comment-details .comment-data {
+                  flex: 1 100%;
+                  padding: 0;
+                  height: inherit;
+                  margin: 0 0 5px 10%; }
+            body #feed-posts #posts-list-container .outer-ul .post-list-inner-container .post-comments .post-class {
+              display: flex;
+              margin: auto 10px;
+              height: auto;
+              padding: 0;
+              border-radius: 10px; }
+              body #feed-posts #posts-list-container .outer-ul .post-list-inner-container .post-comments .post-class input[type=text] {
+                flex: 1 100%;
+                font-size: 17px;
+                border: 2px solid #aaa;
+                border-radius: 20px;
+                margin: 0 10px 0 10px;
+                outline: none;
+                width: 100%; }
+              body #feed-posts #posts-list-container .outer-ul .post-list-inner-container .post-comments .post-class input[type=submit] {
+                flex: 1 60px;
+                height: 50px;
+                font-size: 10px;
+                border: 2px solid #aaa;
+                border-radius: 20px;
+                margin: 0 10px 0 0;
+                outline: none;
+                width: 20%; }
